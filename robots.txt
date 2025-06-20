@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://care28.com.au/webhook.php?sitemap.xml
+Sitemap: https://care28.com.au/sitemap.xml

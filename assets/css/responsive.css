@@ -1,0 +1,14 @@
+@media (max-width: 1370px) {
+  .header-exgency {
+    height: 40px;
+  }
+  .header-bottom-main > .row {
+    height: 80px;
+  }
+  .slider-sec {
+    height: calc(100vh - 120px);
+  }
+  .slider-sec .swiper-slide .container {
+    height: calc(100vh - 120px);
+  }
+}

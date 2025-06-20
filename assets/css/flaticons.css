@@ -1,0 +1,144 @@
+@font-face {
+    font-family: "flaticons_custom";
+    src: url("../fonts/flaticons_custom.ttf") format("truetype"),
+    url("../fonts/flaticons_custom.woff") format("woff"),
+    url("../fonts/flaticons_custom.woff2") format("woff2"),
+    url("../fonts/flaticons_custom.ttf") format("ttf"),
+    url("../fonts/flaticons_custom.eot") format("embedded-opentype"),
+    url("../fonts/flaticons_custom.svg") format("svg");
+}
+
+i[class^="flaticons-"]:before, i[class*=" flaticons-"]:before {
+    font-family: flaticons_custom !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticons-disabled:before {
+    content: "\f101";
+}
+.flaticons-disabled-1:before {
+    content: "\f102";
+}
+.flaticons-pulse:before {
+    content: "\f103";
+}
+.flaticons-intelligence:before {
+    content: "\f104";
+}
+.flaticons-star:before {
+    content: "\f105";
+}
+.flaticons-planning:before {
+    content: "\f106";
+}
+.flaticons-uncertainty:before {
+    content: "\f107";
+}
+.flaticons-community:before {
+    content: "\f108";
+}
+.flaticons-phone-call:before {
+    content: "\f109";
+}
+.flaticons-chatting:before {
+    content: "\f10a";
+}
+.flaticons-checklist:before {
+    content: "\f10b";
+}
+.flaticons-phone-call-1:before {
+    content: "\f10c";
+}
+.flaticons-messages:before {
+    content: "\f10d";
+}
+.flaticons-pin:before {
+    content: "\f10e";
+}
+.flaticons-question:before {
+    content: "\f10f";
+}
+.flaticons-teamwork:before {
+    content: "\f110";
+}
+.flaticons-love:before {
+    content: "\f111";
+}
+.flaticons-ambulance:before {
+    content: "\f112";
+}
+.flaticons-hospital:before {
+    content: "\f113";
+}
+.flaticons-list:before {
+    content: "\f114";
+}
+.flaticons-wheel-chair:before {
+    content: "\f115";
+}
+.flaticons-physiotherapy:before {
+    content: "\f116";
+}
+.flaticons-physiotherapy-1:before {
+    content: "\f117";
+}
+.flaticons-health:before {
+    content: "\f118";
+}
+.flaticons-smart-home:before {
+    content: "\f119";
+}
+.flaticons-hospice:before {
+    content: "\f11a";
+}
+.flaticons-location:before {
+    content: "\f11b";
+}
+.flaticons-open-envelope:before {
+    content: "\f11c";
+}
+.flaticons-contact:before {
+    content: "\f11d";
+}
+.flaticons-time-left:before {
+    content: "\f11e";
+}
+.flaticons-user:before {
+    content: "\f11f";
+}
+.flaticons-list-1:before {
+    content: "\f120";
+}
+.flaticons-book:before {
+    content: "\f121";
+}
+.flaticons-heart:before {
+    content: "\f122";
+}
+.flaticons-dumbbell:before {
+    content: "\f123";
+}
+.flaticons-announcer:before {
+    content: "\f124";
+}
+.flaticons-charity:before {
+    content: "\f125";
+}
+.flaticons-home:before {
+    content: "\f126";
+}
+.flaticons-medical-insurance:before {
+    content: "\f127";
+}
+.flaticons-nurse:before {
+    content: "\f128";
+}
+.flaticons-nursing-home:before {
+    content: "\f129";
+}
