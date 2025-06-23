@@ -1,4 +1,3 @@
-
 (function ($) {
 	"use strict";
 
@@ -41,42 +40,42 @@
 	$('.wp-menu nav > ul > li').slice(-4).addClass('menu-last');
 
 
-	$('.slc-hamburger-toggle').on('click', function(){
+	$('.slc-hamburger-toggle').on('click', function () {
 		$('.header-side-menu').slideToggle('header-side-menu');
 	});
 
 
 
-	if($('.main-menu-content').length && $('.main-menu-mobile').length){
+	if ($('.main-menu-content').length && $('.main-menu-mobile').length) {
 		let navContent = document.querySelector(".main-menu-content").outerHTML;
 		let mobileNavContainer = document.querySelector(".main-menu-mobile");
 		mobileNavContainer.innerHTML = navContent;
-	
-	
+
+
 		let arrow = $(".main-menu-mobile .has-dropdown > a");
-	
+
 		arrow.each(function () {
 			let self = $(this);
 			let arrowBtn = document.createElement("BUTTON");
 			arrowBtn.classList.add("dropdown-toggle-btn");
 			arrowBtn.innerHTML = "<i class='fa-regular fa-angle-right'></i>";
-	
+
 			self.append(function () {
-			  return arrowBtn;
+				return arrowBtn;
 			});
-	
+
 			self.find("button").on("click", function (e) {
-			  e.preventDefault();
-			  let self = $(this);
-			  self.toggleClass("dropdown-opened");
-			  self.parent().toggleClass("expanded");
-			  self.parent().parent().addClass("dropdown-opened").siblings().removeClass("dropdown-opened");
-			  self.parent().parent().children(".sub-menu").slideToggle();
-			  
-	
+				e.preventDefault();
+				let self = $(this);
+				self.toggleClass("dropdown-opened");
+				self.parent().toggleClass("expanded");
+				self.parent().parent().addClass("dropdown-opened").siblings().removeClass("dropdown-opened");
+				self.parent().parent().children(".sub-menu").slideToggle();
+
+
 			});
-	
-		  });
+
+		});
 	}
 
 
@@ -84,10 +83,12 @@
 	$(".offcanvas-open-btn").on("click", function () {
 		$(".offcanvas__sec").addClass("offcanvas-opened");
 		$(".body_Overlay").addClass("opened");
+		$('html').addClass('_html');
 	});
 	$(".offcanvas-close-btn").on("click", function () {
 		$(".offcanvas__sec").removeClass("offcanvas-opened");
 		$(".body_Overlay").removeClass("opened");
+		$('html').removeClass('_html');
 	});
 
 
@@ -98,6 +99,7 @@
 		$(".search-area").removeClass("opened");
 		$(".cartmini__area").removeClass("cartmini-opened");
 		$(".body_Overlay").removeClass("opened");
+		$('html').removeClass('_html');
 	});
 
 
@@ -118,7 +120,7 @@
 	//  Theme Settings Js
 
 	// settings append in body
-	function slc_settings_append($x){
+	function slc_settings_append($x) {
 		var settings = $('body');
 		let dark;
 		$x == true ? dark = 'd-block' : dark = 'd-none';
@@ -213,7 +215,7 @@
 		   </div>
 		</div>
 	 </div>`;
-	 settings.append(settings_html);
+		settings.append(settings_html);
 	}
 
 
@@ -290,32 +292,32 @@
 		});
 
 
-		function slc_set_check(clr){
+		function slc_set_check(clr) {
 			const arr = Array.from(document.querySelectorAll('[data-color]'));
-	
+
 			var a = localStorage.getItem('slc_color_scheme');
 
-			let test =  arr.map(color =>{
+			let test = arr.map(color => {
 				let datacolor = color.getAttribute('data-color');
-				
+
 				return datacolor;
 			}).filter(color => color == a);
-			
+
 			var arrLength = test.length;
 
-			if(arrLength == 0){
+			if (arrLength == 0) {
 				$('.slc-color-active').removeClass('active');
-			}else{
+			} else {
 				$('.slc-color-active').addClass('active');
 			}
 		}
 
-		function slc_check_color(){
+		function slc_check_color() {
 			var a = localStorage.getItem('slc_color_scheme');
 
 			var list = $(`[data-color="${a}"]`);
 
-			list.parent().addClass('active').parent().siblings().find('.slc-color-active').removeClass('active')		
+			list.parent().addClass('active').parent().siblings().find('.slc-color-active').removeClass('active')
 		}
 		slc_check_color();
 
@@ -356,7 +358,9 @@
 
 		btn.on('click', function (e) {
 			e.preventDefault();
-			$('html, body').animate({ scrollTop: 0 }, '300');
+			$('html, body').animate({
+				scrollTop: 0
+			}, '300');
 		});
 	}
 	back_to_top();
@@ -364,7 +368,7 @@
 	var slc_rtl = localStorage.getItem('slc_dir');
 	let rtl_setting = slc_rtl == 'rtl' ? true : false;
 
-	
+
 
 	// Sliders js
 	//active slider
@@ -374,24 +378,23 @@
 		loop: true,
 		effect: 'cube',
 		speed: 500,
-		autoplay: false,
-		// autoplay: {
-		// 	delay: 4500,
-		// },
+		autoplay: {
+			delay: 4500,
+		},
 		// Navigation arrows
 		cubeEffect: {
-        shadow: false,
-        slideShadows: true,
-        shadowOffset: 20,
-        shadowScale: 0.94,
-      },
+			shadow: false,
+			slideShadows: true,
+			shadowOffset: 20,
+			shadowScale: 0.94,
+		},
 		navigation: {
 			nextEl: ".slider-btn-next",
 			prevEl: ".slider-btn-prev",
 		},
 		pagination: {
 			el: ".swiper-pagination",
-		  },
+		},
 		breakpoints: {
 			'1200': {
 				slidesPerView: 1,
@@ -419,10 +422,14 @@
 		centeredSlides: true,
 		loop: true,
 		autoplay: {
-			delay: 4000,
+			delay: 9000,
 		},
 		rtl: rtl_setting,
 		// Navigation arrows
+		navigation: {
+			nextEl: ".slider-btn-next-testi",
+			prevEl: ".slider-btn-prev-testi",
+		},
 		pagination: {
 			el: ".blog-main-slider-dot",
 			clickable: true,
@@ -474,38 +481,38 @@
 
 	//  Line Animation Js
 	if ($('#marker').length > 0) {
-		function slc_tab_line(){
+		function slc_tab_line() {
 			var marker = document.querySelector('#marker');
 			var item = document.querySelectorAll('.menu-style-3  > nav > ul > li');
 			var itemActive = document.querySelector('.menu-style-3  > nav > ul > li.active');
 
-			function indicator(e){
-				marker.style.left = e.offsetLeft+"px";
-				marker.style.width = e.offsetWidth+"px";
+			function indicator(e) {
+				marker.style.left = e.offsetLeft + "px";
+				marker.style.width = e.offsetWidth + "px";
 			}
-				
-		
+
+
 			item.forEach(link => {
-				link.addEventListener('mouseenter', (e)=>{
+				link.addEventListener('mouseenter', (e) => {
 					indicator(e.target);
 				});
-				
+
 			});
 
-			
+
 			var activeNav = $('.menu-style-3 > nav > ul > li.active');
 			var activewidth = $(activeNav).width();
 			var activePadLeft = parseFloat($(activeNav).css('padding-left'));
 			var activePadRight = parseFloat($(activeNav).css('padding-right'));
 			var totalWidth = activewidth + activePadLeft + activePadRight;
-			
+
 			var precedingAnchorWidth = anchorWidthCounter();
-		
-		
-			$(marker).css('display','block');
-			
+
+
+			$(marker).css('display', 'block');
+
 			$(marker).css('width', totalWidth);
-		
+
 			function anchorWidthCounter() {
 				var anchorWidths = 0;
 				var a;
@@ -513,24 +520,24 @@
 				var aPadLeft;
 				var aPadRight;
 				var aTotalWidth;
-				$('.menu-style-3 > nav > ul > li').each(function(index, elem) {
+				$('.menu-style-3 > nav > ul > li').each(function (index, elem) {
 					var activeTest = $(elem).hasClass('active');
-					marker.style.left = elem.offsetLeft+"px";
-					if(activeTest) {
-					// Break out of the each function.
-					return false;
+					marker.style.left = elem.offsetLeft + "px";
+					if (activeTest) {
+						// Break out of the each function.
+						return false;
 					}
-			
+
 					a = $(elem).find('li');
 					aWidth = a.width();
 					aPadLeft = parseFloat(a.css('padding-left'));
 					aPadRight = parseFloat(a.css('padding-right'));
 					aTotalWidth = aWidth + aPadLeft + aPadRight;
-			
+
 					anchorWidths = anchorWidths + aTotalWidth;
-	
+
 				});
-		
+
 				return anchorWidths;
 			}
 		}
@@ -539,28 +546,28 @@
 
 
 	//  Password Toggle Js
-	if($('.password-show-toggle').length > 0){
+	if ($('.password-show-toggle').length > 0) {
 
 		var showBtn = $('.password-show-toggle');
 
 		showBtn.each(function (e) {
-			$(this).on('click', function(x){
+			$(this).on('click', function (x) {
 				let inputField = $(this).parent().find('input');
-				if(inputField.attr('type') === "password"){
+				if (inputField.attr('type') === "password") {
 					inputField.attr('type', 'text')
 					$(this).children('.open-eye-icon').css({
-						'display' : 'block'
+						'display': 'block'
 					})
 					$(this).children('.close-eye-icon').css({
-						'display' : 'none'
+						'display': 'none'
 					})
-				}else{
+				} else {
 					inputField.attr('type', 'password')
 					$(this).children('.open-eye-icon').css({
-						'display' : 'none'
+						'display': 'none'
 					})
 					$(this).children('.close-eye-icon').css({
-						'display' : 'block'
+						'display': 'block'
 					})
 				}
 			})
@@ -568,18 +575,37 @@
 	}
 
 	if ($('.header-height').length > 0) {
-		var headerHeight = document.querySelector(".header-height");      
-		var setHeaderHeight = headerHeight.offsetHeight;	
-		
+		var headerHeight = document.querySelector(".header-height");
+		var setHeaderHeight = headerHeight.offsetHeight;
+
 		$(".header-height").each(function () {
 			$(this).css({
-				'height' : setHeaderHeight + 'px'
+				'height': setHeaderHeight + 'px'
 			});
 		});
-	  }
+	}
 
 
-	$('.chevIcon').click(function() {
+	$('.chevIcon').click(function () {
 		$(this).parents(".dashboadHero").toggleClass('dashboadHero_');
 	});
+
+	$('.accordion-item .accordion-collapse').each(function () {
+		if ($(this).hasClass('show')) {
+			$(this).closest('.accordion-item').addClass('active-block');
+		}
+	});
+
+	$('.accordion-item .accordion-collapse').on('shown.bs.collapse hidden.bs.collapse', function () {
+		$('.accordion .accordion-collapse').each(function () {
+			if ($(this).hasClass('show')) {
+				$(this).closest('.accordion-item').addClass('active-block');
+			} else {
+				$(this).closest('.accordion-item').removeClass('active-block');
+			}
+		});
+	});
+
+
+
 })(jQuery);
