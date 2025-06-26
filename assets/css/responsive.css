@@ -168,6 +168,9 @@
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
+  .breadcrumb {
+    width: 100%;
+  }
 }
 
 @media (max-width: 575px) {
@@ -255,9 +258,6 @@
   .offcanvas__content {
     padding: 30px 20px 30px;
   }
-  .breadcrumb {
-    width: 100%;
-  }
   .breadcrumb-bg {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -272,5 +272,15 @@
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
+  }
+  .contact-form {
+    padding: 40px 30px;
+  }
+  .contact-wrap {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .mb50 {
+    margin-bottom: 30px !important;
   }
 }
